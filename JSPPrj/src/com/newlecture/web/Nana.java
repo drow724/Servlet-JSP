@@ -2,7 +2,6 @@ package com.newlecture.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,9 +18,13 @@ public class Nana extends HttpServlet {
 			
 			PrintWriter out = response.getWriter();
 			
-			int cnt = Integer.parseInt(request.getParameter("cnt"));
+			String cnt_ = request.getParameter("cnt");
+			
+			int cnt = 100;
+			if(cnt_ != null && !cnt_.equals(""))
+				cnt = Integer.parseInt(cnt_);
 			
 			for(int i=0; i<cnt; i++)
-				out.println((i+1)+": 안녕 Servlet!!<br />");
+				out.println((i+1)+": 안녕 Servlet!!<br >");
 		}
 }
