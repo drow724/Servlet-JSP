@@ -36,8 +36,9 @@ public class Spag extends HttpServlet{
 		   notice.put("id", 1);
 		   notice.put("title", "EL은 좋아요");
 		   request.setAttribute("notice", notice);
+		   
 		   RequestDispatcher dispatcher
-		   		= request.getRequestDispatcher("WebContent/spag.jsp");
+		   		= request.getRequestDispatcher("spag");
 		   	dispatcher.forward(request, response);
 	}
 }
