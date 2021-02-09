@@ -10,5 +10,8 @@
 </head>
 <body>
 	<%=request.getAttribute("result") %>입니다.
+	${result}<br >
+	${names[0]}<br >
+	${notice.title}
 </body>
 </html>
