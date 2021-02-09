@@ -1,6 +1,6 @@
 <%
-int x = 3;
-int y = 4;
+	int x = 3;
+	int y = 4;
 %>
 <!DOCTYPE html>
 <html>
