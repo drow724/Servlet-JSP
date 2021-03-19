@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.newlecture.web.entity.Notice;
+
 @WebServlet("/notice/detail")
 public class NoticeDetailController extends HttpServlet {
 	@Override
@@ -41,13 +43,17 @@ public class NoticeDetailController extends HttpServlet {
 			 	String writerId = rs.getString("WRITER_ID");
 			 	String hit = rs.getString("HIT");
 			    
-				
-				request.setAttribute("title", title);
-				request.setAttribute("regDate", regDate);
-				request.setAttribute("content", content);
-				request.setAttribute("files", files);
-				request.setAttribute("writerId", writerId);
-				request.setAttribute("hit", hit);
+			 	Notice notice = new Notice(
+			 			id,
+			 			title,
+			 			regDate,
+			 			content,
+			 			files,
+			 			writerId,
+			 			hit
+			 			);
+			 	
+			 	request.setAttribute("n", notice);
 			 	
 			    rs.close();
 					st.close();
