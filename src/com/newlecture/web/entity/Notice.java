@@ -17,7 +17,7 @@ public class Notice {
 	
 	public Notice(int id, String title, Date regDate, String content, String files, String writerId, String hit) {
 
-		id = id;
+		this.id = id;
 		this.title = title;
 		this.regDate = regDate;
 		this.content = content;

@@ -62,6 +62,6 @@ public class NoticeListController extends HttpServlet{
 		}
 		request.setAttribute("list", list);
 		
-		request.getRequestDispatcher("/notice/list.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/view/notice/list.jsp").forward(request, response);
 	}
 }
