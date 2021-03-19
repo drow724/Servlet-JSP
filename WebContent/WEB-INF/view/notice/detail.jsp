@@ -180,7 +180,7 @@
 					<div class="margin-top">
 						<table class="table border-top-default">
 							<tbody>
-								
+	
 								<tr>
 									<th>다음글</th>
 									<td colspan="3"  class="text-align-left text-indent">다음글이 없습니다.</td>
