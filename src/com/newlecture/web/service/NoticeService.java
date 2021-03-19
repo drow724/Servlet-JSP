@@ -18,7 +18,8 @@ public class NoticeService {
 	return null;
 	}
 	public int getNoticeCount() {
-		return 0;
+		
+		return getNoticeCount("title", "");
 	}
 	public int getNoticeCount(String field, String query) {
 		return 0;
@@ -29,11 +30,11 @@ public class NoticeService {
 	}
 	public List<Notice> getNextNotice(int id){
 	
-	return null;
+		return null;
 	}
 	public List<Notice> getPrevNotice(int id){
 	
-	return null;
+		return null;
 	}
 }
 
