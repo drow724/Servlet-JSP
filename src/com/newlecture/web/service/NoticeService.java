@@ -15,21 +15,39 @@ public class NoticeService {
 	}
 	public List<Notice> getNoticeList(String field, String query, int page){
 	
-	return null;
+		String sql = "SELECT * FROM (" +
+				"	SELECT ROWNUM NUM, N.* " +
+				"	FROM (SELECT * FROM NOTICE ORDER BY REGDATE DESC)N" +
+				")	"+
+				"WHERE NUM BETWEEN 1 AND 5";
+				return null;
 	}
 	public int getNoticeCount() {
 		
 		return getNoticeCount("title", "");
 	}
 	public int getNoticeCount(String field, String query) {
+		
+		String sql = "SELECT * FROM (" +
+				"SELECT ROWNUM NUM, N.*" +
+				"FROM (SELECT * FROM NOTICE ORDER BY REGDATE DESC)N"+
+				")"+
+				"WHERE NUM BETWEEN 1 AND 5";
 		return 0;
 	}
 	public List<Notice> getNotice(int id){
+		String sql = "SELECT * FROM NOTICE WHERE ID=?";
 		
 		return null;
 	}
 	public List<Notice> getNextNotice(int id){
-	
+	String sql = "	select * from notice "
+			+ "	where ID = ( "
+			+ "    SELECT ID FROM NOTICE "
+			+ "    WHERE SELECT ID FROM NOTICE "
+			+ "	WHERE REGDATE > (SELECT REGDATE FROM NOTICE WHERE ID=3) "
+			+ "	AND ROWNUM = 1 " +
+			 "	)";
 		return null;
 	}
 	public List<Notice> getPrevNotice(int id){
