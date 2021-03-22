@@ -199,8 +199,8 @@
 					</div>
 	
 					<div class="text-align-right margin-top">
-						<input type="submit" class="btn-text btn-default" value="ÀÏ°ý°ø°³">
-						<input type="submit" class="btn-text btn-default" value="ÀÏ°ý»èÁ¦">
+						<input type="submit" class="btn-text btn-default" name="cmd" value="ÀÏ°ý°ø°³">
+						<input type="submit" class="btn-text btn-default" name="cmd"value="ÀÏ°ý»èÁ¦">
 						<a class="btn-text btn-default" href="reg.html">±Û¾²±â</a>				
 					</div>
 				</form>

@@ -24,7 +24,6 @@ public class ListController extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//list?f=title&q=a
 
-		
 		String field_ = request.getParameter("f");
 		String query_ = request.getParameter("q");
 		String page_ = request.getParameter("p");

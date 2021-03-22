@@ -30,12 +30,18 @@ public class ListController extends HttpServlet{
 		
 		String[] openIds = request.getParameterValues("open-id");
 		String[] delIds = request.getParameterValues("del-id");
+		String cmd = request.getParameter("cmd");
 		
-		for(String openId : openIds)
-		System.out.printf("open id : %s\n", openId);
-		
-		for(String delId : delIds)
-			System.out.printf("del id : %s\n", delId);
+		switch(cmd) {
+		case "ÀÏ°ý°ø°³":
+			for(String openId : openIds)
+				System.out.printf("open id : %s\n", openId);
+			break;
+		case "ÀÏ°ý»èÁ¦":
+			for(String delId : delIds)
+				System.out.printf("del id : %s\n", delId);
+			break;
+		}
 	}
 	
 	@Override
