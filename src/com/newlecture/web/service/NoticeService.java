@@ -11,23 +11,24 @@ import java.util.Date;
 import java.util.List;
 
 import com.newlecture.web.entity.Notice;
+import com.newlecture.web.entity.NoticeView;
 
 public class NoticeService {
-	public List<Notice> getNoticeList(){
+	public List<NoticeView> getNoticeList(){
 		
 		return getNoticeList("title", "", 1);
 	}
-	public List<Notice> getNoticeList(int page){
+	public List<NoticeView> getNoticeList(int page){
 		
 		return getNoticeList("title", "", page);
 	}
-	public List<Notice> getNoticeList(String field/*TUTKE, WRITER_ID*/, String query/*A*/, int page){
+	public List<NoticeView> getNoticeList(String field/*TUTKE, WRITER_ID*/, String query/*A*/, int page){
 		
-		List<Notice> list = new ArrayList<>();
+		List<NoticeView> list = new ArrayList<>();
 			
 		String sql = "SELECT * FROM (" +
 				"	SELECT ROWNUM NUM, N.* " +
-				"	FROM (SELECT * FROM NOTICE WHERE "+field+" LIKE ? ORDER BY REGDATE DESC)N" +
+				"	FROM (SELECT * FROM NOTICE_VIEW WHERE "+field+" LIKE ? ORDER BY REGDATE DESC)N" +
 				")	"+
 				"WHERE NUM BETWEEN ? AND ?";
 		
@@ -51,19 +52,21 @@ public class NoticeService {
 				int id = rs.getInt("id");
 				String title = rs.getString("TITLE");
 			 	Date regDate = rs.getDate("REGDATE");
-			 	String content = rs.getString("CONTENT");
+			 	//String content = rs.getString("CONTENT");
 			 	String files = rs.getString("FILES");
 			 	String writerId = rs.getString("WRITER_ID");
 			 	String hit = rs.getString("HIT");
+			 	int cmtCount = rs.getInt("CMT_COUNT");
 			 	
-			 	Notice notice = new Notice(
+			 	NoticeView notice = new NoticeView(
 			 			id,
 			 			title,
 			 			regDate,
-			 			content,
+			 			//content,
 			 			files,
 			 			writerId,
-			 			hit
+			 			hit,
+			 			cmtCount
 			 			);
 			 	list.add(notice);
 				};
