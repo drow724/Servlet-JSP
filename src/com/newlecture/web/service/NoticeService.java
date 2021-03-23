@@ -78,6 +78,7 @@ public class NoticeService {
 			 	String writerId = rs.getString("WRITER_ID");
 			 	String hit = rs.getString("HIT");
 			 	int cmtCount = rs.getInt("CMT_COUNT");
+			 	boolean pub = rs.getBoolean("PUB");
 			 	
 			 	NoticeView notice = new NoticeView(
 			 			id,
@@ -85,8 +86,10 @@ public class NoticeService {
 			 			regDate,
 			 			//content,
 			 			files,
+			 			
 			 			writerId,
 			 			hit,
+			 			pub,
 			 			cmtCount
 			 			);
 			 	list.add(notice);
@@ -163,6 +166,7 @@ public class NoticeService {
 			 	String files = rs.getString("FILES");
 			 	String writerId = rs.getString("WRITER_ID");
 			 	String hit = rs.getString("HIT");
+			 	boolean pub = rs.getBoolean("PUB");
 			 	
 			 	 notice = new Notice(
 			 			nid,
@@ -171,7 +175,8 @@ public class NoticeService {
 			 			content,
 			 			files,
 			 			writerId,
-			 			hit
+			 			hit,
+			 			pub
 			 			);
 
 				};
@@ -213,6 +218,7 @@ public class NoticeService {
 		 	String files = rs.getString("FILES");
 		 	String writerId = rs.getString("WRITER_ID");
 		 	String hit = rs.getString("HIT");
+		 	boolean pub = rs.getBoolean("PUB");
 		 	
 		 	 notice = new Notice(
 		 			nid,
@@ -221,7 +227,8 @@ public class NoticeService {
 		 			content,
 		 			files,
 		 			writerId,
-		 			hit
+		 			hit,
+		 			pub
 		 			);
 
 			};
@@ -259,6 +266,7 @@ String url = "jdbc:oracle:thin:@localhost:1521/xepdb1";
 			 	String files = rs.getString("FILES");
 			 	String writerId = rs.getString("WRITER_ID");
 			 	String hit = rs.getString("HIT");
+			 	boolean pub = rs.getBoolean("PUB");
 			 	
 			 	 notice = new Notice(
 			 			nid,
@@ -267,7 +275,8 @@ String url = "jdbc:oracle:thin:@localhost:1521/xepdb1";
 			 			content,
 			 			files,
 			 			writerId,
-			 			hit
+			 			hit,
+			 			pub
 			 			);
 
 				};
