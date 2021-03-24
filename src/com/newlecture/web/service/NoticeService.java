@@ -25,18 +25,17 @@ public class NoticeService {
 	public int insertNotice(Notice notice){
 		int result = 0;
 		
-		String sql = "INSERT INTO NOTICE(ID, TITLE, CONTENT, WRITER_ID, PUB) VALUES(?,?,?,?,?)";
+		String sql = "INSERT INTO NOTICE(TITLE, CONTENT, WRITER_ID, PUB) VALUES(?,?,?,?)";
 		String url = "jdbc:oracle:thin:@localhost:1521/xepdb1";
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			Connection con = DriverManager.getConnection(url, "NEWLEC", "119562");
 			PreparedStatement st = con.prepareStatement(sql);
-			st.setInt(1,  notice.getId());
-			st.setString(2,  notice.getTitle());
-			st.setString(3,  notice.getContent());
-			st.setString(4,  notice.getWriterId());
-			st.setBoolean(5,  notice.getPub());
+			st.setString(1,  notice.getTitle());
+			st.setString(2,  notice.getContent());
+			st.setString(3,  notice.getWriterId());
+			st.setBoolean(4,  notice.getPub());
 			
 			result = st.executeUpdate();
 			
